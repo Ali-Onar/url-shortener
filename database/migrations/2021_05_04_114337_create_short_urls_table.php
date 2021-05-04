@@ -15,6 +15,9 @@ class CreateShortUrlsTable extends Migration
     {
         Schema::create('short_urls', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->nullable()->constrained();
+            $table->text('original_url');
+            $table->string('short_url');
             $table->timestamps();
         });
     }

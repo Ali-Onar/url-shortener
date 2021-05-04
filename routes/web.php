@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\ShortUrlController;
+use Illuminate\Routing\Route as RoutingRoute;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,3 +24,5 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';
+
+Route::post('/short', [ShortUrlController::class, 'short'])->name('short.url');
