@@ -12,6 +12,7 @@
             <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-200 uppercase tracking-wider">Id</th>
             <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-200 uppercase tracking-wider">Original Url</th>
             <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-200 uppercase tracking-wider">Short Url</th>
+            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-200 uppercase tracking-wider">Visits</th>
           </tr>
         </thead>
         <tbody class="bg-white divide-y divide-gray-200">
@@ -21,13 +22,16 @@
             <td class="px-6 py-4 whitespace-nowrap">{{ $link->id }}</td>
             <td class="px-6 py-4 whitespace-nowrap">{{ $link->original_url }}</td>
             <td class="px-6 py-4 whitespace-nowrap">{{ url($link->short_url) }}</td>
+            <td class="px-6 py-4 whitespace-nowrap">{{ $link->visits }}</td>
           </tr>
           @endforeach
           
           <!-- More items... -->
         </tbody>
       </table>
-      <div class="m-2 p-2">Pagination</div>
+      <div class="m-2 p-2">
+        {{ $links->links() }}
+      </div>
     </div>
   </div>
 </div>

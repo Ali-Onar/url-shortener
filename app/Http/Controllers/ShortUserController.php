@@ -8,7 +8,8 @@ class ShortUserController extends Controller
 {
     public function index()
     {
-        $links = auth()->user()->links;
+        $links = auth()->user()->links()->paginate(6);
+
         return view('links.index', compact('links'));
     }
 }
