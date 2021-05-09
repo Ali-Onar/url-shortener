@@ -15,7 +15,7 @@ Route::get('/dashboard', function () {
 
 require __DIR__.'/auth.php';
 
-Route::get('links', [ShortUserController::class, 'index'])->name('user.links')->middleware('auth');
+Route::get('/links', [ShortUserController::class, 'index'])->name('user.links')->middleware('auth');
 Route::post('/short', [ShortUrlController::class, 'short'])->name('short.url');
 Route::get('/{code}', [ShortUrlController::class, 'show'])->name('short.show');
 

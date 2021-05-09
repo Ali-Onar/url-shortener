@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\ShortRequest;
 use App\Models\ShortUrl;
-use Illuminate\Support\Facades\Redirect;
 
 class ShortUrlController extends Controller
 {
